@@ -8,27 +8,12 @@
 		"preserveConstEnums": true,
 		"sourceMap": true,
 		"declaration": true,
-		"watch": true,
+		"watch": false,
 		"listFiles": true
 	},
 	
 	"files": [
 		"src/ts/app.ts",
-		
-		// game framework
-		"typings/node/node.d.ts",
-		"typings/phaser/phaser.d.ts",
-		"typings/phaser/pixi.d.ts",
-		"typings/phaser/p2.d.ts",
-		
-		// dev tools
-		"typings/del/del.d.ts",
-		"typings/gulp/gulp.d.ts",
-		"typings/gulp-sourcemaps/gulp-sourcemaps.d.ts",
-		"typings/gulp-tsd/gulp-tsd.d.ts",
-		"typings/gulp-tslint/gulp-tslint.d.ts",
-		"typings/gulp-typescript/gulp-typescript.d.ts",
-		"typings/gulp-util/gulp-util.d.ts",
 		
 		// tsd
 		"typings/tsd.d.ts"
