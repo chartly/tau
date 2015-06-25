@@ -11,7 +11,7 @@ class SimpleGame
 	
 	preload()
 	{
-		this.game.load.image('logo', "assets/ds_logo.png");
+		this.game.load.image('logo', 'assets/ds_logo.png');
 		this.game.stage.backgroundColor = 0xB20059;
 	}
 	
@@ -24,4 +24,4 @@ class SimpleGame
 
 window.onload = () => {
 	var game = new SimpleGame();
-}
+};
