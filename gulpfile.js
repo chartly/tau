@@ -9,7 +9,8 @@ var gulp = require('gulp'),
     tslint = require('gulp-tslint'),
     sourcemaps = require('gulp-sourcemaps'),
     del = require('del'),
-    Config = require('./gulpfile.config');
+    Config = require('./gulpfile.config'),
+    livereload = require('gulp-livereload');
 
 var config = new Config();
 
@@ -17,8 +18,6 @@ var config = new Config();
  * Generates the app.d.ts references file dynamically from all application *.ts files.
  */
 gulp.task('gen-ts-refs', function () {
-    console.log('Generating app.d.ts...');   
-    
     var target = gulp.src(config.appTypeScriptReferences);
     var sources = gulp.src([config.allTypeScript], {read: false});
     return target.pipe(inject(sources, {
@@ -34,7 +33,6 @@ gulp.task('gen-ts-refs', function () {
  * Lint all custom TypeScript files.
  */
 gulp.task('ts-lint', function () {
-    console.log('Linting typescript source...');
     return gulp.src(config.allTypeScript).pipe(tslint()).pipe(tslint.report('prose'));
 });
 
@@ -42,8 +40,6 @@ gulp.task('ts-lint', function () {
  * Compile TypeScript and include references to library and app .d.ts files.
  */
 gulp.task('compile-ts', function () {
-    console.log('Compiling typescript...');
-    
     var sourceTsFiles = [config.allTypeScript,                //path to typescript files
                          config.libraryTypeScriptDefinitions, //reference to library .d.ts files
                          config.appTypeScriptReferences];     //reference to app.d.ts files
@@ -62,8 +58,6 @@ gulp.task('compile-ts', function () {
  * Remove all generated JavaScript files from TypeScript compilation.
  */
 gulp.task('clean-ts', function (cb) {
-    console.log('Cleaning typescript build files...');    
-    
   var typeScriptGenFiles = [config.tsOutputPath,            // path to generated JS files
                             config.sourceApp +'**/*.js',    // path to all JS files auto gen'd by editor
                             config.sourceApp +'**/*.js.map' // path to all sourcemap files auto gen'd by editor
@@ -74,8 +68,7 @@ gulp.task('clean-ts', function (cb) {
 });
 
 gulp.task('watch', function() {
-    console.log('Files changes detected.');
     gulp.watch([config.allTypeScript], ['ts-lint', 'compile-ts', 'gen-ts-refs']);
 });
 
-gulp.task('default', ['ts-lint', 'compile-ts', 'gen-ts-refs', 'watch']);
+gulp.task('build', ['ts-lint', 'compile-ts', 'gen-ts-refs', 'watch']);
