@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"out": "./bin/js/app.js",
+		"out": "bin/js/app.js",
 		"target": "ES5",
 		"module": "commonjs",
 		"noImplicitAny": false,
@@ -9,13 +9,11 @@
 		"sourceMap": true,
 		"declaration": true,
 		"watch": false,
+		"diagnostics": true,
 		"listFiles": true
 	},
 	
 	"files": [
-		"src/ts/app.ts",
-		
-		// tsd
-		"typings/tsd.d.ts"
+		"src/ts/app.ts"
 	]
 }
