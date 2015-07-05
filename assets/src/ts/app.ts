@@ -1,4 +1,4 @@
-/// <reference path="../../typings/tsd.d.ts" />
+/// <reference path="../tsdef/phaser/phaser.d.ts" />
 
 class SimpleGame
 {
