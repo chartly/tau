@@ -1,19 +1,22 @@
 {
 	"compilerOptions": {
-		"out": "bin/js/app.js",
-		"target": "ES5",
-		"module": "commonjs",
+		"outDir": "./build",
+		"target": "ES6",
+		
 		"noImplicitAny": false,
 		"noLib": false,
 		"preserveConstEnums": true,
+		
 		"sourceMap": true,
 		"declaration": true,
-		"watch": false,
+		
+		"listFiles": true,
 		"diagnostics": true,
-		"listFiles": true
+		"watch": false
 	},
 	
 	"files": [
-		"src/ts/app.ts"
+		"assets/src/ts/app.ts",
+		"assets/src/ts/main.ts"
 	]
 }
