@@ -1,7 +1,8 @@
 {
 	"compilerOptions": {
 		"outDir": "./build",
-		"target": "ES6",
+		"target": "ES5",
+		"module": "commonjs",
 		
 		"noImplicitAny": false,
 		"noLib": false,
@@ -11,12 +12,10 @@
 		"declaration": true,
 		
 		"listFiles": true,
-		"diagnostics": true,
 		"watch": false
 	},
 	
 	"files": [
-		"assets/src/ts/app.ts",
 		"assets/src/ts/main.ts"
 	]
 }

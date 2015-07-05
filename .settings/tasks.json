@@ -13,15 +13,12 @@
       "args": ["run"]
     },
     {
-      // Test task, Ctrl+Shift+T
-      // "npm test"
-      "taskName": "test",
-      "isTestCommand": true
-    },
-    {
-      // "npm run lint"
       "taskName": "build:tslint",
       "args": ["run"]
+    },
+    {
+      "taskName": "clean",
+      "args": [ "run" ]
     }
   ]
 }
