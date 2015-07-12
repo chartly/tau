@@ -4720,3 +4720,17 @@
 /typings/through2/through2.d.ts
 /typings/vinyl/vinyl.d.ts
 Thumbs.db
+/node_modules/.bin/*
+/node_modules/http-server
+/node_modules/jade
+/node_modules/live-reload
+/node_modules/mkdirp
+/node_modules/nib
+/node_modules/npm-run-all
+/node_modules/opener
+/node_modules/rimraf
+/node_modules/stylus
+/node_modules/tsconfig-glob
+/node_modules/tsconfig-lint
+/node_modules/tslint
+/node_modules/typescript
