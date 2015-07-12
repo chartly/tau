@@ -11,6 +11,7 @@
     "live-reload": "^1.1.0",
     "mkdirp": "^0.5.1",
     "nib": "^1.1.0",
+    "npm-run-all": "^1.2.6",
     "opener": "^1.4.1",
     "rimraf": "^2.4.1",
     "stylus": "^0.51.1",
@@ -21,14 +22,12 @@
   },
   "scripts": {
     "clean": "rimraf build/*",
-    
     "prebuild": "npm run clean",
     "build": "npm run build:ts -s && npm run build:styles -s && npm run build:markup -s",
     "build:tslint": "tslint -f assets/src/ts/main.ts -t prose",
     "build:ts": "tsc",
     "build:styles": "stylus assets/styles/main.styl -m -o build/",
     "build:markup": "jade assets/markup/index.jade -o build",
-    
     "open": "opener http://localhost:1337",
     "serve": "http-server -p 1337 build/",
     "live-reload": "live-reload --port 9091 build/"
