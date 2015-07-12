@@ -28,8 +28,9 @@
     "build:ts": "tsc",
     "build:styles": "stylus assets/styles/main.styl -m -o build/",
     "build:markup": "jade assets/markup/index.jade -o build",
-    "open": "opener http://localhost:1337",
-    "serve": "http-server -p 1337 build/",
-    "live-reload": "live-reload --port 9091 build/"
+    "serve:open": "opener http://localhost:1337",
+    "serve:http": "http-server -p 1337 build/",
+    "serve:live": "live-reload --port 9091 build/",
+    "start" : "npm-run-all --parallel serve:live serve:http serve:open"
   }
 }
