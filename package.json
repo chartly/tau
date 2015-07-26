@@ -13,15 +13,16 @@
     "nib": "^1.1.0",
     "npm-run-all": "^1.2.6",
     "opener": "^1.4.1",
+    "phaser": "^2.4.1",
     "rimraf": "^2.4.1",
     "stylus": "^0.51.1",
     "tsconfig-glob": "^0.1.3",
     "tsconfig-lint": "^0.1.7",
     "tslint": "^2.3.1-beta",
-    "typescript": "^1.5.0-beta"
+    "typescript": "^1.5.3"
   },
   "scripts": {
-    "clean": "rimraf build/*",
+    "clean": "rimraf build/js/**.js",
     "prebuild": "npm run clean",
     "build": "npm run build:ts -s && npm run build:styles -s && npm run build:markup -s",
     "build:tslint": "tslint -f assets/src/ts/main.ts -t prose",
@@ -31,6 +32,6 @@
     "serve:open": "opener http://localhost:1337",
     "serve:http": "http-server -p 1337 build/",
     "serve:live": "live-reload --port 9091 build/",
-    "start" : "npm-run-all --parallel serve:live serve:http serve:open"
+    "start": "npm-run-all --parallel serve:live serve:http serve:open"
   }
 }

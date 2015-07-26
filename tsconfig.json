@@ -1,21 +1,23 @@
 {
 	"compilerOptions": {
-		"outDir": "./build",
+		"out": "./build/js/app.js",
 		"target": "ES5",
 		"module": "commonjs",
 		
+		"declaration": false,
 		"noImplicitAny": false,
 		"noLib": false,
-		"preserveConstEnums": true,
-		
+		"removeComments": true,
 		"sourceMap": true,
-		"declaration": true,
 		
 		"listFiles": true,
 		"watch": false
 	},
 	
 	"files": [
-		"assets/src/ts/main.ts"
+		"assets/src/ts/main.ts",
+		"node_modules/phaser/typescript/p2.d.ts",
+		"node_modules/phaser/typescript/phaser.d.ts",
+		"node_modules/phaser/typescript/pixi.d.ts"
 	]
 }
