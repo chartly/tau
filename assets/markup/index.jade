@@ -1,15 +1,13 @@
 doctype html
 html(lang="en")
     head
-        title chartly - tau - 0.0.2
-        script(src="main.js")
+        title chartly - tau - 0.0.3
+        script(src="js/app.js")
+        script(src="")
         script(src="//localhost:9091/livereload.js")
+        script(src="../../node_modules/phaser/build/phaser.js")
 
-        link(rel="stylesheet",href="main.css")
+        link(rel="stylesheet",href="app.css")
       body
         h1 tau skeleton
-        #container
-            p.
-                All of this content was created using various preprocessors and
-                compilers, as well as test tools and watchers, without using
-                Grunt, Gulp, Brocolli, Fez, Jake, etc.
+        div(id="content")
