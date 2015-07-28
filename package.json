@@ -22,10 +22,10 @@
     "typescript": "^1.5.3"
   },
   "scripts": {
-    "clean": "rimraf build/js/**.js",
-    "prebuild": "npm run clean",
+    "clean": "rimraf build/*",
+    "prebuild": "tsconfig-lint .",
     "build": "npm run build:ts -s && npm run build:styles -s && npm run build:markup -s",
-    "build:tslint": "tslint -f assets/src/ts/main.ts -t prose",
+    "build:tslint": "",
     "build:ts": "tsc",
     "build:styles": "stylus assets/styles/app.styl -m -o build/",
     "build:markup": "jade assets/markup/index.jade -o build",

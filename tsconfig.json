@@ -15,7 +15,7 @@
 	},
 	
 	"files": [
-		"assets/src/ts/main.ts",
+		"assets/src/ts/app.ts",
 		"assets/src/ts/game.ts",
 		"assets/src/ts/menu.ts",
 		"node_modules/phaser/typescript/p2.d.ts",
