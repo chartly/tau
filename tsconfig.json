@@ -1,14 +1,15 @@
 {
 	"compilerOptions": {
-		"out": "./build/js/app.js",
+		"outDir": "./assets/src/js",
 		"target": "ES5",
 		"module": "commonjs",
+		"sourceMap": true,
 		
-		"declaration": false,
+		"preserveConstEnums": true,
 		"noImplicitAny": false,
 		"noLib": false,
 		"removeComments": true,
-		"sourceMap": true,
+		
 		
 		"listFiles": true,
 		"watch": false

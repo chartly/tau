@@ -22,16 +22,14 @@
     "typescript": "^1.5.3"
   },
   "scripts": {
-    "clean": "rimraf build/*",
-    "prebuild": "tsconfig-lint .",
     "build": "npm run build:ts -s && npm run build:styles -s && npm run build:markup -s",
-    "build:tslint": "",
+    "build:tslint": "tsconfig-lint .",
     "build:ts": "tsc",
-    "build:styles": "stylus assets/styles/app.styl -m -o build/",
-    "build:markup": "jade assets/markup/index.jade -o build",
+    "build:styles": "stylus assets/styles/app.styl -m -o .",
+    "build:markup": "jade assets/markup/index.jade -o .",
     "serve:open": "opener http://localhost:1337",
-    "serve:http": "http-server -p 1337 build/",
-    "serve:live": "live-reload --port 9091 build/",
+    "serve:http": "http-server -p 1337 .",
+    "serve:live": "live-reload --port 9091 .",
     "start": "npm-run-all --parallel serve:live serve:http serve:open"
   }
 }
