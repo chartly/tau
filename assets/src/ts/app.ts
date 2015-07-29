@@ -1,4 +1,4 @@
-/// <reference path="../../../node_modules/phaser/typescript/phaser.d.ts" />
+import * as Phaser from '../tsdef/phaser'
 
 import {LogoScreen} from './menu'
 import {LevelScreen} from './game'
