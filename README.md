@@ -1,3 +1,3 @@
 # tau
 
-Simple testbed for attempting to get a game framework running in the browser. This is built on TypeScript 1.5, Node, and developed using VSCode.
+Skeleton for front-facing projects. Currently, iterating on the build system, Node vs iojs, and using Phaser + TypeScript definition to make a simple game framework.
