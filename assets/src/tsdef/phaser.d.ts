@@ -1,8 +1,11 @@
-/// <reference path="pixi.d.ts" />
-/// <reference path="p2.d.ts" />
-
 // Type definitions for Phaser 2.4.0 2015-Jul-16
 // Project: https://github.com/photonstorm/phaser
+
+// Corbin Hart (https://github.com/chartly/)
+// 29/07/15 - 1200 PST: updated defintion to comply with es6 module export syntax
+
+import * as p2 from 'p2'
+import * as PIXI from 'pixi'
 
 // global variables
 export var VERSION: string;
