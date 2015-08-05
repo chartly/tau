@@ -1,26 +1,29 @@
 {
-	"compilerOptions": {
-		"outDir": "./assets/src/js",
-		"target": "ES5",
-		"module": "commonjs",
-		"sourceMap": true,
-		
-		"preserveConstEnums": true,
-		"noImplicitAny": false,
-		"noLib": false,
-		"removeComments": true,
-		
-		
-		"listFiles": true,
-		"watch": false
-	},
-	
-	"files": [
-		"assets/src/ts/app.ts",
-		"assets/src/ts/game.ts",
-		"assets/src/ts/menu.ts",
-		"node_modules/phaser/typescript/p2.d.ts",
-		"node_modules/phaser/typescript/phaser.d.ts",
-		"node_modules/phaser/typescript/pixi.d.ts"
-	]
+    "compilerOptions": {
+        "outDir": "./assets/src/js",
+        "target": "ES5",
+        "module": "commonjs",
+        "sourceMap": true,
+        "noLib": true,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "listFiles": true,
+        "watch": false
+    },
+    "filesGlob": [
+        "assets/src/ts/**.ts",
+        "assets/src/tsdef/**.ts"
+    ],
+    "files": [
+        
+        "assets/src/tsdef/lib.es6.d.ts",
+        "assets/src/tsdef/node.d.ts",
+        "assets/src/tsdef/p2.d.ts",
+        "assets/src/tsdef/phaser.d.ts",
+        "assets/src/tsdef/pixi.d.ts",
+        "assets/src/ts/app.ts",
+        "assets/src/ts/game.ts",
+        "assets/src/ts/menu.ts",
+        "assets/src/ts/node-main.ts"
+    ]
 }
