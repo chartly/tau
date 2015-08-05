@@ -1,35 +1,29 @@
 {
   "name": "tau",
   "version": "0.0.1",
-  "description": "",
+  "description": "Front-facing projects",
   "author": "chartly",
   "license": "MIT",
   "main": "build/www/index.js",
   "devDependencies": {
-    "http-server": "^0.8.0",
+    "beefy": "^2.1.5",
+    "browserify": "^11.0.1",
     "jade": "^1.11.0",
-    "live-reload": "^1.1.0",
     "mkdirp": "^0.5.1",
-    "nib": "^1.1.0",
     "npm-run-all": "^1.2.6",
-    "opener": "^1.4.1",
-    "phaser": "^2.4.1",
     "rimraf": "^2.4.1",
     "stylus": "^0.51.1",
     "tsconfig-glob": "^0.1.3",
     "tsconfig-lint": "^0.1.8",
     "tslint": "^2.3.1-beta",
-    "typescript": "^1.5.3"
+    "typescript": "^1.5.3",
+    "watchify": "^3.3.1"
   },
   "scripts": {
     "build": "npm run build:ts -s && npm run build:styles -s && npm run build:markup -s",
     "build:tslint": "tsconfig-lint .",
     "build:ts": "tsc",
-    "build:styles": "stylus assets/styles/app.styl -m -o .",
-    "build:markup": "jade assets/markup/index.jade -o .",
-    "serve:open": "opener http://localhost:1337",
-    "serve:http": "http-server -p 1337 .",
-    "serve:live": "live-reload --port 9091 .",
-    "start": "npm-run-all --parallel serve:live serve:http serve:open"
+    "build:styles": "stylus assets/styles/app.styl -m -o assets/styles",
+    "build:markup": "jade assets/markup/index.jade -o ."
   }
 }
