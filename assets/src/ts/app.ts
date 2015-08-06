@@ -1,5 +1,9 @@
+// game engine imports
+import * as p2 from '../lib/p2'
+import * as PIXI from '../lib/pixi'
 import * as Phaser from '../lib/phaser'
 
+// local imports
 import {LogoScreen} from './menu'
 import {LevelScreen} from './game'
 
@@ -24,6 +28,9 @@ export class GameApp
 		this.game.state.start("LogoScreen", true, true);
 	}
 }
+
+var index = require('../../markup/index.jade');
+var style = require('../../styles/app.styl');
 
 // global dom hook
 window.onload = () => {
