@@ -39,11 +39,11 @@
     "extensions" : [ ".jade", ".styl" ]
   },
   "scripts": {
-    "clean": "rimraf assets/src/js/*.js assets/src/js/*.js.map",
-    "clean:bundle": "rimraf assets/entry.js",
+    "clean:js": "rimraf assets/src/js/*.js assets/src/js/*.js.map",
+    "clean:js:bundle": "rimraf assets/entry.js",
     
     "prebuild": "echo Build started.....",
-    "build": "npm-run-all clean --parallel build:ts build:styles build:markup --sequential clean:bundle build:bundle",
+    "build": "npm-run-all clean:js --parallel build:ts build:styles build:markup --sequential clean:js:bundle build:bundle",
     "postbuild": "echo Build complete.",
     
     "build:ts": "tsconfig . && tsc",
