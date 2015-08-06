@@ -29,9 +29,6 @@ export class GameApp
 	}
 }
 
-var index = require('../../markup/index.jade');
-var style = require('../../styles/app.styl');
-
 // global dom hook
 window.onload = () => {
 	console.log('Hello, world!');
