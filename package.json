@@ -1,29 +1,56 @@
 {
   "name": "tau",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Front-facing projects",
   "author": "chartly",
   "license": "MIT",
-  "main": "build/www/index.js",
+  "main": "assets/src/js/bundle.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chartly/tau"
+  },
   "devDependencies": {
     "beefy": "^2.1.5",
     "browserify": "^11.0.1",
     "jade": "^1.11.0",
+    "jadeify": "^4.4.0",
     "mkdirp": "^0.5.1",
     "npm-run-all": "^1.2.6",
     "rimraf": "^2.4.1",
     "stylus": "^0.51.1",
+    "stylusify": "^2.0.0",
     "tsconfig-glob": "^0.1.3",
     "tsconfig-lint": "^0.1.8",
     "tslint": "^2.3.1-beta",
     "typescript": "^1.5.3",
     "watchify": "^3.3.1"
   },
+  "browserify": {
+    "transform": [
+      [
+        "jadeify",
+        {
+          "compileDebug": true,
+          "pretty": true
+        }
+      ],
+      [ "stylusify" ]
+    ],
+    "extensions" : [ ".jade", ".styl" ]
+  },
   "scripts": {
-    "build": "npm run build:ts -s && npm run build:styles -s && npm run build:markup -s",
-    "build:tslint": "tsconfig-lint .",
-    "build:ts": "tsc",
-    "build:styles": "stylus assets/styles/app.styl -m -o assets/styles",
-    "build:markup": "jade assets/markup/index.jade -o ."
+    "clean": "rimraf assets/src/js/*.js assets/src/js/*.js.map",
+    "clean:bundle": "rimraf assets/entry.js",
+    
+    "prebuild": "echo Build started.....",
+    "build": "npm-run-all clean --parallel build:ts build:styles build:markup --sequential clean:bundle build:bundle",
+    "postbuild": "echo Build complete.",
+    
+    "build:ts": "tsconfig . && tsc",
+    "build:styles": "stylus assets/styles/app.styl -o ./assets",
+    "build:markup": "jade assets/markup/index.jade -o ./assets",
+    "build:bundle": "browserify assets/src/js/app.js -o assets/entry.js -v -d",
+    
+    "lint": "tsconfig-lint ."
   }
 }
