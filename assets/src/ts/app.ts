@@ -1,4 +1,4 @@
-import * as Phaser from '../tsdef/phaser'
+import * as Phaser from '../lib/phaser'
 
 import {LogoScreen} from './menu'
 import {LevelScreen} from './game'

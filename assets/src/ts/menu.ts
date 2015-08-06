@@ -1,4 +1,4 @@
-import * as Phaser from '../tsdef/phaser'
+import * as Phaser from '../lib/phaser'
 
 export class LogoScreen extends Phaser.State
 {
