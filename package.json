@@ -51,6 +51,8 @@
     "build:markup": "jade assets/markup/index.jade -o ./assets",
     "build:bundle": "browserify assets/src/js/app.js -o assets/entry.js -v -d",
     
+    "serve": "beefy assets/src/js/app.js 1337 --live --open --index=assets/index.html --cwd ./assets -- -o assets/entry.js -v -d",
+    
     "lint": "tsconfig-lint ."
   }
 }

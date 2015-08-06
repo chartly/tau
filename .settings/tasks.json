@@ -9,16 +9,23 @@
       // Build task, Ctrl+Shift+B
       // "npm install --loglevel info"
       "taskName": "build",
+      "args": ["run"],
       "isBuildCommand": true,
-      "args": ["run"]
+      "isWatching": true,
+      "problemMatcher": "$tsc"
     },
     {
-      "taskName": "build:tslint",
+      "taskName": "lint",
       "args": ["run"]
     },
     {
       "taskName": "clean",
       "args": [ "run" ]
+    },
+    {
+      "taskName": "serve",
+      "args": [ "run" ]
     }
+    
   ]
 }
