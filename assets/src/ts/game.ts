@@ -1,5 +1,5 @@
 
-import * as Phaser from '../lib/phaser';
+import {Phaser} from '../lib/phaser';
 
 export class LevelScreen extends Phaser.State
 {

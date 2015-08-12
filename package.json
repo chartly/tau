@@ -14,9 +14,12 @@
     "browserify": "^11.0.1",
     "jade": "^1.11.0",
     "jadeify": "^4.4.0",
+    "minifyify": "^7.0.5",
     "mkdirp": "^0.5.1",
     "npm-run-all": "^1.2.6",
+    "phaser": "^2.4.2",
     "rimraf": "^2.4.1",
+    "sorcery": "^0.6.3",
     "stylus": "^0.51.1",
     "stylusify": "^2.0.0",
     "tsconfig-glob": "^0.1.3",
@@ -25,36 +28,19 @@
     "typescript": "^1.5.3",
     "watchify": "^3.3.1"
   },
-  "browserify": {
-    "transform": [
-      [
-        "jadeify",
-        {
-          "compileDebug": true,
-          "pretty": true
-        }
-      ],
-      [
-        "stylusify"
-      ]
-    ],
-    "extensions": [
-      ".jade",
-      ".styl"
-    ]
-  },
   "scripts": {
     "clean": "npm-run-all -p clean:js clean:js:bundle clean:static",
     "clean:js": "rimraf assets/src/js/*.js assets/src/js/*.js.map",
-    "clean:js:bundle": "rimraf assets/app-bundle.js",
-    "clean:static" : "rimraf assets/index.html assets/app.css",
+    "clean:js:bundle": "rimraf assets/app-bundle.min.js assets/app-bundle.min.js.map",
+    "clean:static": "rimraf assets/index.html assets/app.css",
     "prebuild": "npm run clean",
-    "build": "npm-run-all -p build:ts build:styles build:markup -s build:bundle",
+    "build": "npm-run-all -p build:ts build:styles build:markup -s build:bundle build:bundle:uglify",
     "build:ts": "tsconfig . && tsc",
     "build:styles": "stylus assets/styles/app.styl -o ./assets",
     "build:markup": "jade assets/markup/index.jade -o ./assets",
-    "build:bundle": "browserify assets/src/js/app.js -o assets/entry.js -v -d",
-    "serve": "beefy assets/src/js/app.js 1337 --live --open --index=assets/index.html --cwd ./assets -- -o assets/entry.js -v -d",
+    "build:bundle": "browserify assets/src/js/app.js -o assets/src/js/app-bundle.js -v -d",
+    "build:bundle:uglify": "uglifyjs -c -m --screw-ie8 --source-map=assets/app-bundle.min.js.map -o assets/app-bundle.min.js -- assets/src/js/app-bundle.js",
+    "serve": "beefy assets/src/js/app.js 1337 --live --open --index=assets/index.html --cwd ./assets -- -o assets/app-bundle.js -v -d",
     "lint": "tsconfig-lint ."
   }
 }
