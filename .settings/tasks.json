@@ -15,6 +15,14 @@
       "problemMatcher": "$tsc"
     },
     {
+      "taskName": "watch",
+      "args": [
+        "run"
+      ],
+      "isWatching": true,
+      "problemMatcher": "$tsc"
+    },
+    {
       "taskName": "lint",
       "args": ["run"]
     },
