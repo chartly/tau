@@ -17,7 +17,9 @@
     "files": [
         "assets/src/lib/lib.es6.d.ts",
         "assets/src/lib/node.d.ts",
+        "assets/src/lib/p2.d.ts",
         "assets/src/lib/phaser.d.ts",
+        "assets/src/lib/pixi.d.ts",
         "assets/src/ts/app.ts",
         "assets/src/ts/game.ts",
         "assets/src/ts/menu.ts"

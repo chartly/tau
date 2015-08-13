@@ -1,5 +1,5 @@
 
-import {Phaser} from '../lib/phaser';
+/// <reference path="../lib/phaser.d.ts" />
 
 export class LevelScreen extends Phaser.State
 {

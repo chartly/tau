@@ -1,4 +1,4 @@
-import {Phaser} from '../lib/phaser'
+/// <reference path="../lib/phaser.d.ts" />
 
 export class LogoScreen extends Phaser.State
 {
