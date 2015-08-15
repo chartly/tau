@@ -20,6 +20,7 @@ export class LogoScreen extends Phaser.State
 	{
 		// background sprite
 		this.bg = this.game.add.sprite(this.game.width / 2, this.game.height / 2, 'logo-bg');
+		this.bg.anchor.setTo(.5, .5);
 		
 		// fps counter text
 		var style = { font: '65px Consolas', fill: '#ff0000', align: 'center'};
