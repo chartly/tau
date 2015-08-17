@@ -45,15 +45,6 @@ export class GameScreen extends Phaser.State
 	{
 		this.input.maxPointers = 1;
 		this.scale.forceOrientation(true, false);
-		this.assetScale = 1;
-		if(window.innerWidth > 960 || window.innerHeight > 540)
-		{
-			this.assetScale = 2;
-		}
-		
-		this.width = window.innerWidth / (960 * this.assetScale);
-		this.height = window.innerHeight / (540 * this.assetScale);
-		this.scaleRatio = Math.max(this.width, this.height);
 	}
 	
 	update()
@@ -61,13 +52,21 @@ export class GameScreen extends Phaser.State
 		// movement
 		this.player.body.velocity.setTo(0, 0);
 		
-		if(this.cursors.left.isDown)
+		if (this.cursors.left.isDown)
 		{
 			this.player.body.velocity.x = -200;
 		}
-		else if(this.cursors.right.isDown)
+		else if (this.cursors.right.isDown)
 		{
 			this.player.body.velocity.x = 200;
+		}
+		else if (this.cursors.down.isDown)
+		{
+			this.player.body.velocity.y = 200;
+		}
+		else if (this.cursors.up.isDown)
+		{
+			this.player.body.velocity.y = -200;
 		}
 	}
 	
