@@ -8,8 +8,7 @@
     {
       // Build task, Ctrl+Shift+B
       // "npm install --loglevel info"
-      "taskName": "build",
-      "args": ["run"],
+      "taskName": "start",
       "isBuildCommand": true,
       "isWatching": true,
       "problemMatcher": "$tsc"
@@ -28,10 +27,6 @@
     },
     {
       "taskName": "clean",
-      "args": [ "run" ]
-    },
-    {
-      "taskName": "serve",
       "args": [ "run" ]
     }
     
