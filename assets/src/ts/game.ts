@@ -5,8 +5,11 @@ export class GameScreen extends Phaser.State
 {
 	// members
 	bg : Phaser.TileSprite;
-	bgVelocity : Phaser.Point;
+	bgOverlay : Phaser.TileSprite;
 	player : Phaser.Sprite;
+	
+	bgVelocity : Phaser.Point;
+	
 	playerSpeed : number;
 	cursors : Phaser.CursorKeys;
 
@@ -24,17 +27,24 @@ export class GameScreen extends Phaser.State
 	preload()
 	{
 		this.load.image('laser', 'img/ckeegan/laser_1.png');
+		this.load.image('bg-overlay', 'img/ckeegan/game_screen.png');
 		this.load.image('player-ship', 'img/ckeegan/hero_1.png');
 		this.load.image('bg', 'img/ckeegan/backdrop1.jpg');
 	}
 
 	create()
 	{
+		this.game.stage.disableVisibilityChange = true;
+		
 		this.physics.startSystem(Phaser.Physics.ARCADE);
 
 		// set the background
 		this.bg = this.game.add.tileSprite(0, 0, 1920, 1080, 'bg');
-		this.bgVelocity = new Phaser.Point(1.5, 2.75);
+		this.bgVelocity = new Phaser.Point(1.5 / 2, 2.75 / 2);
+		
+		this.bgOverlay = this.game.add.tileSprite(this.game.width / 2, this.game.height / 2, 1920, 1080, 'bg-overlay');
+		this.bgOverlay.anchor.set(.5, .5);
+		this.bgOverlay.scale = new Phaser.Point(.91, 1);
 
 		// set the player up
 		this.player = this.game.add.sprite(this.game.width / 2, this.game.height - 170, 'player-ship');
@@ -72,6 +82,7 @@ export class GameScreen extends Phaser.State
 
 		// movement
 		this.player.body.velocity.setTo(0, 0);
+		//this.player.body.rotation += 3.14159 / 2;
 
 		if (this.cursors.left.isDown)
 		{
@@ -83,11 +94,11 @@ export class GameScreen extends Phaser.State
 		}
 		if (this.cursors.down.isDown)
 		{
-			this.player.body.velocity.y = this.playerSpeed;
+			this.player.body.velocity.y += this.playerSpeed;
 		}
 		if (this.cursors.up.isDown)
 		{
-			this.player.body.velocity.y = -1 * this.playerSpeed;
+			this.player.body.velocity.y += -1 * this.playerSpeed;
 		}
 
 		// shooting?
