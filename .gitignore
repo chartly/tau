@@ -4734,3 +4734,12 @@ Thumbs.db
 /node_modules/tsconfig-lint
 /node_modules/tslint
 /node_modules/typescript
+/node_modules/beefy
+/node_modules/browserify
+/node_modules/jadeify
+/node_modules/minifyify
+/node_modules/phaser
+/node_modules/sorcery
+/node_modules/stylusify
+/node_modules/tsify
+/node_modules/watchify
