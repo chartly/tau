@@ -1,20 +1,20 @@
 /// <reference path="../lib/phaser.d.ts" />
 
 // local imports
-import {LogoScreen} from './menu'
+import {Preload} from './menu'
 import {GameScreen} from './game'
 
-export class GameApp
+export class PhaserApp
 {
 	game : Phaser.Game;
-	logoScreen : LogoScreen;
+	logoScreen : Preload;
 	gameScreen : GameScreen;
 
 	constructor()
 	{
 		// allocate phaser game object
 		this.game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO, 'framebuffer');
-		this.logoScreen = new LogoScreen();
+		this.logoScreen = new Preload();
 		this.gameScreen = new GameScreen();
 
 		// add the game states
@@ -30,5 +30,5 @@ export class GameApp
 window.onload = () => {
 	console.log('Hello, world!');
 
-	new GameApp();
+	new PhaserApp();
 }

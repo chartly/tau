@@ -1,6 +1,6 @@
 /// <reference path="../lib/phaser.d.ts" />
 
-export class LogoScreen extends Phaser.State
+export class Preload extends Phaser.State
 {
 	bg : Phaser.Sprite;
 	timer : Phaser.Timer;
