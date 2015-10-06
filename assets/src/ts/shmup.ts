@@ -1,15 +1,15 @@
 
 /// <reference path="../lib/phaser.d.ts" />
 
-export class GameScreen extends Phaser.State
+export class Shmup extends Phaser.State
 {
 	// members
 	bg : Phaser.TileSprite;
 	bgOverlay : Phaser.TileSprite;
 	player : Phaser.Sprite;
-	
+
 	bgVelocity : Phaser.Point;
-	
+
 	playerSpeed : number;
 	cursors : Phaser.CursorKeys;
 
@@ -35,13 +35,13 @@ export class GameScreen extends Phaser.State
 	create()
 	{
 		this.game.stage.disableVisibilityChange = true;
-		
+
 		this.physics.startSystem(Phaser.Physics.ARCADE);
 
 		// set the background
 		this.bg = this.game.add.tileSprite(0, 0, 1920, 1080, 'bg');
 		this.bgVelocity = new Phaser.Point(1.5 / 2, 2.75 / 2);
-		
+
 		this.bgOverlay = this.game.add.tileSprite(this.game.width / 2, this.game.height / 2, 1920, 1080, 'bg-overlay');
 		this.bgOverlay.anchor.set(.5, .5);
 		this.bgOverlay.scale = new Phaser.Point(.91, 1);
@@ -71,7 +71,7 @@ export class GameScreen extends Phaser.State
 	{
 		this.input.maxPointers = 1;
 		this.scale.forceOrientation(true, false);
-		
+
 		this.playerSpeed = 350;
 	}
 

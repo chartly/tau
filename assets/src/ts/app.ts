@@ -1,28 +1,32 @@
 /// <reference path="../lib/phaser.d.ts" />
 
 // local imports
-import {Preload} from './menu'
-import {GameScreen} from './game'
+import {Preload} from 'menu'
+import {Shmup} from 'shmup'
+import {SphereBlitz} from 'SphereBlitz'
 
 export class PhaserApp
 {
 	game : Phaser.Game;
 	logoScreen : Preload;
-	gameScreen : GameScreen;
+	shmup : Shmup;
+	sphereBlitz : SphereBlitz;
 
 	constructor()
 	{
 		// allocate phaser game object
 		this.game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO, 'framebuffer');
 		this.logoScreen = new Preload();
-		this.gameScreen = new GameScreen();
+		this.shmup = new Shmup();
+		this.sphereBlitz = new SphereBlitz();
 
 		// add the game states
 		this.game.state.add("LogoScreen", this.logoScreen, false);
-		this.game.state.add("GameScreen", this.gameScreen, false);
+		this.game.state.add("Shmup", this.shmup, false);
+		this.game.state.add("SphereBlitz", this.sphereBlitz, false);
 
 		// start the app
-		this.game.state.start("GameScreen", true, true);
+		this.game.state.start("SphereBlitz", true, true);
 	}
 }
 

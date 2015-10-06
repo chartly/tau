@@ -15,15 +15,16 @@
         "assets/src/lib/**.ts"
     ],
     "files": [
+        "assets/src/lib/pixi.d.ts",
         "assets/src/lib/lib.es6.d.ts",
         "assets/src/lib/node.d.ts",
         "assets/src/lib/p2.d.ts",
         "assets/src/lib/phaser.d.ts",
-        "assets/src/lib/pixi.d.ts",
-        "assets/src/ts/app.ts",
         "assets/src/ts/boot.ts",
-        "assets/src/ts/game.ts",
+        "assets/src/ts/app.ts",
         "assets/src/ts/items.ts",
-        "assets/src/ts/menu.ts"
+        "assets/src/ts/menu.ts",
+        "assets/src/ts/shmup.ts",
+        "assets/src/ts/SphereBlitz.ts"
     ]
 }
