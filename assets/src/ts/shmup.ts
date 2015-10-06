@@ -82,7 +82,7 @@ export class GameScreen extends Phaser.State
 
 		// movement
 		this.player.body.velocity.setTo(0, 0);
-		//this.player.body.rotation += 3.14159 / 2;
+		//this.player.body.rotation -= 3.14159 / 4;
 
 		if (this.cursors.left.isDown)
 		{
