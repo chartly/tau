@@ -1,9 +1,9 @@
 /// <reference path="../lib/phaser.d.ts" />
 
 // local imports
-import {Preload} from 'menu'
-import {Shmup} from 'shmup'
-import {SphereBlitz} from 'SphereBlitz'
+import {Preload} from './menu'
+import {Shmup} from './shmup'
+import {SphereBlitz} from './SphereBlitz'
 
 export class PhaserApp
 {
@@ -26,7 +26,7 @@ export class PhaserApp
 		this.game.state.add("SphereBlitz", this.sphereBlitz, false);
 
 		// start the app
-		this.game.state.start("SphereBlitz", true, true);
+		this.game.state.start("Shmup", true, true);
 	}
 }
 
