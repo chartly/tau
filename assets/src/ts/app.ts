@@ -15,7 +15,7 @@ export class PhaserApp
 	constructor()
 	{
 		// allocate phaser game object
-		this.game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO, 'framebuffer');
+		this.game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.WEBGL, 'framebuffer');
 		this.logoScreen = new Preload();
 		this.shmup = new Shmup();
 		this.sphereBlitz = new SphereBlitz();
@@ -26,7 +26,8 @@ export class PhaserApp
 		this.game.state.add("SphereBlitz", this.sphereBlitz, false);
 
 		// start the app
-		this.game.state.start("Shmup", true, true);
+		//this.game.state.start("Shmup", true, true);
+		this.game.state.start("SphereBlitz", true, true);
 	}
 }
 
