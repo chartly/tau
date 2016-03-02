@@ -26,8 +26,8 @@ export class PhaserApp
 		this.game.state.add("SphereBlitz", this.sphereBlitz, false);
 
 		// start the app
-		//this.game.state.start("Shmup", true, true);
-		this.game.state.start("SphereBlitz", true, true);
+		this.game.state.start("Shmup", true, true);
+		//this.game.state.start("SphereBlitz", true, true);
 	}
 }
 
