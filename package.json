@@ -16,27 +16,24 @@
     "jadeify": "^4.4.0",
     "minifyify": "^7.0.5",
     "mkdirp": "^0.5.1",
-    "npm-run-all": "^1.2.6",
     "rimraf": "^2.4.1",
     "stylus": "^0.51.1",
     "stylusify": "^2.0.0",
     "tsconfig-glob": "^0.1.3",
     "tsconfig-lint": "^0.1.8",
     "tsify": "^0.11.9",
-    "tslint": "^2.3.1-beta",
     "typescript": "^1.5.3",
     "watchify": "^3.3.1"
   },
   "scripts": {
-    "clean": "npm-run-all -p clean:js clean:js:bundle clean:static",
+    "clean": "npm run clean:js && npm run clean:js:bundle && npm run clean:static",
     "clean:js": "rimraf assets/src/js/*.js assets/src/js/*.js.map",
     "clean:js:bundle": "rimraf assets/app-bundle.js assets/app-bundle.js.map",
     "clean:static": "rimraf assets/index.html assets/app.css",
 
     "lint": "tsconfig-lint .",
 
-    "prebuild": "npm run clean",
-    "build": "npm-run-all -p build:ts build:styles build:markup -s build:bundle",
+    "build": "npm run build:ts && npm run build:styles && npm run build:markup && npm run build:bundle",
     "build:ts": "tsconfig .",
     "build:styles": "stylus assets/styles/app.styl -o ./assets",
     "build:markup": "jade assets/markup/index.jade -o ./assets",
@@ -45,6 +42,6 @@
     "watch": "watchify assets/src/ts/app.ts assets/src/ts/shmup.ts assets/src/ts/menu.ts assets/src/ts/SphereBlitz.ts assets/src/lib/lib.es6.d.ts assets/src/lib/phaser.d.ts assets/src/lib/pixi.d.ts assets/src/lib/p2.d.ts -p tsify -p [ minifyify --map app-bundle.js.map --output assets/app-bundle.js.map --uglify [ --compress --mangle --source-map app-bundle.js.map ] ] -o assets/app-bundle.js --debug --verbose",
     "serve": "beefy assets/src/ts/app.ts 1337 --live --open --index=assets/index.html --cwd ./assets -- assets/src/ts/menu.ts assets/src/ts/SphereBlitz.ts assets/src/lib/lib.es6.d.ts assets/src/lib/phaser.d.ts assets/src/lib/pixi.d.ts assets/src/lib/p2.d.ts -p tsify -p [ minifyify --map app-bundle.js.map --output assets/app-bundle.js.map --uglify [ --compress --mangle --source-map app-bundle.js.map ] ] -o assets/app-bundle.js --debug --verbose",
 
-    "start": "npm-run-all build -p watch serve"
+    "start": "npm run build && npm run watch | npm run serve"
   }
 }
